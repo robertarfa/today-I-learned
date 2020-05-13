@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campos Dinâmicos</title>
+</head>
+
+<style>
+    body{
+        text-align: center;
+    }
+
+    div{
+        padding: 5px;
+    }
+
+    p{
+        font-weight: bold;
+    }
+
+    input{
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid gray;
+    }
+
+    button{
+        background: rgb(155, 6, 224);
+        color: white;
+        padding: 10px;
+        box-shadow: 2px 2px 10px grey;
+        border-style: none;
+    }
+
+    button:hover{
+        cursor: pointer;
+        box-shadow: 3px 3px 10px rgb(97, 97, 97);
+        border-style: none;
+    }
+
+    button:active{
+        box-shadow: -2px -2px 10px rgb(97, 97, 97);
+        border-style: none;
+    }
+
+</style>
+
+<body>
+
+    <div id="dynamic-box">
+
+        <div>
+           <p>Campos dinâmicos</p>
+        </div>
+
+        <div class="dynamic-input">
+            <input type="text">
+        </div>
+
+    </div>
+
+
+    <div>
+        <button type="button" class="add-step">Adicionar novo passo</button>
+    </div>
+
+    <script>
+
+        function addDynamicField() {
+            const dynamicBox = document.querySelector("#dynamic-box")
+            const dynamicField = document.querySelectorAll(".dynamic-input")
+            
+             // Realiza um clone do último ingrediente adicionado
+            const newField = dynamicField[dynamicField.length - 1].cloneNode(true);
+            
+            // Não adiciona um novo input se o último tem um valor vazio
+            if (newField.children[0].value == "") return false;
+            
+            // Deixa o valor do novo input vazio
+            newField.children[0].value = "";
+            
+            dynamicBox.appendChild(newField);
+            console.log(dynamicBox.appendChild(newField))
+        }
+
+        document.querySelector(".add-step").addEventListener("click", addDynamicField)
+
+    </script>
+
+</body>
+
+</html>
+
