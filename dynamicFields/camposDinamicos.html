@@ -48,48 +48,35 @@
 </style>
 
 <body>
-
     <div id="dynamic-box">
-
         <div>
            <p>Campos dinâmicos</p>
         </div>
-
         <div class="dynamic-input">
             <input type="text">
         </div>
-
     </div>
-
-
     <div>
         <button type="button" class="add-step">Adicionar novo passo</button>
     </div>
 
     <script>
-
         function addDynamicField() {
             const dynamicBox = document.querySelector("#dynamic-box")
             const dynamicField = document.querySelectorAll(".dynamic-input")
-            
-             // Realiza um clone do último ingrediente adicionado
+            // Realiza um clone do último campos adicionado
             const newField = dynamicField[dynamicField.length - 1].cloneNode(true);
-            
-            // Não adiciona um novo input se o último tem um valor vazio
+            // Não adiciona um novo input se o último tem um valor vazio            
             if (newField.children[0].value == "") return false;
-            
-            // Deixa o valor do novo input vazio
+            // Deixa o valor do novo input vazio            
             newField.children[0].value = "";
-            
+            // Insere o novo campo no formulário            
             dynamicBox.appendChild(newField);
-            console.log(dynamicBox.appendChild(newField))
         }
-
+        // Ação do botão quando for clicado        
         document.querySelector(".add-step").addEventListener("click", addDynamicField)
-
     </script>
 
 </body>
-
 </html>
 
