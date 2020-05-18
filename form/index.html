@@ -6,31 +6,16 @@
     <title>Formulário</title>
   </head>
   <body>
-    <!-- Hoje com SPA não trabalha mais com action no form?? -->
-    <form>
-      <div>
-        <textarea name="" id="" cols="30" rows="10">Conteúdo</textarea>
-      </div>
-      <div>
-        <input type="text" id="input1" placeholder="Informe seu nome" />
-      </div>
-      <div>
-        <input type="checkbox" id="input2" />
-        Teste
-      </div>
-      <div>
-        <!-- No radio coloca o name igual para que somente um fique selecionável -->
-        <input type="radio" name="option" id="sim" />Sim
-        <input type="radio" name="option" id="nao" />Não
-      </div>
-      <div>
-        <input type="email" name="" id="" placeholder="Informe seu e-mail" />
-        <input type="submit" value="Enviar" />
-      </div>
-      <div>
-        <input type="date" name="" id="" />
-      </div>
+    <!-- Hoje com SPA não trabalha mais com action no form-->
+    <form action="index.html">
+      <label>
+        Infome seu nome:
+        <input type="text" id="nameInput" />
+      </label>
+      <input type="submit" value="Cadastrar" />
     </form>
+
+    <span id="nameLength"></span>
 
     <script src="./script.js"></script>
   </body>
