@@ -1,5 +1,5 @@
 const express = require('express')
-const fs = require('fs')
+const fs = require('fs').promises
 const app = express()
 const accountsRouter = require("./routes/accounts.js")
 
@@ -12,26 +12,19 @@ app.use('/account', accountsRouter)
 //appendFile não vai apagar, vai adicionar o novo conteúdo
 
 
-app.listen(3000, function () {
+app.listen(3000, async () => {
 	try {
-		fs.readFile(global.fileName, 'utf8', (err, data) => {
-			if (err) {
-				const createJsonFile = {
-					nextId: 1,
-					accounts: []
-
-				}
-				fs.writeFile(global.fileName, JSON.stringify(createJsonFile), err => {
-					if (err) {
-						console.log('File was not created')
-					}
-				})
-			}
-		})
+		await fs.readFile(global.fileName, 'utf8')
+		console.log('Api running')
 
 	} catch (err) {
-		console.log("File does not exist")
 
+		const createJsonFile = {
+			nextId: 1,
+			accounts: []
+		}
+		fs.writeFile(global.fileName, JSON.stringify(createJsonFile)).catch(err => {
+			console.log('File was not created')
+		})
 	}
-	console.log('Api running')
 })
