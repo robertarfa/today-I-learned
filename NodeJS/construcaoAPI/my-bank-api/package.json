@@ -1,0 +1,14 @@
+{
+  "name": "my-bank-api",
+  "version": "1.0.0",
+  "description": "desafio igti",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
