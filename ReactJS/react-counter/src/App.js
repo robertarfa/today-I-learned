@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Counter from './components/Counter/Counter'
 import Counter2 from './components/Counter/Counter2'
+import Band from './components/Band'
 
 export default class App extends Component {
 
@@ -8,7 +9,7 @@ export default class App extends Component {
     super()
 
     this.state = {
-      currentCounter: 3,
+      currentCounter: 2,
       steps: 0,
     }
   }
@@ -28,6 +29,9 @@ export default class App extends Component {
 
     return (
       <Fragment>
+        <h3>Band</h3>
+        <Band />
+
         <h3>Counter com estado isolado</h3>
         <Counter />
         <Counter />
