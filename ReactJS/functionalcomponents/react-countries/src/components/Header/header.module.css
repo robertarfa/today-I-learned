@@ -1,0 +1,16 @@
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.info {
+  min-width: 180px;
+  margin: 0 10px 0 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
